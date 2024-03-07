@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Research Profile Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Classy shadow */
+            padding: 20px;
+            overflow: hidden;
+            /* To contain floats */
+            animation: fadeIn 0.5s ease; /* Add animation */
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Profile section styles */
+        .profile {
+            overflow: hidden;
+            /* To contain floats */
+        }
+
+        .profile-image {
+            float: right;
+            margin-left: 20px;
+            border-radius: 50%;
+            /* Circular shape */
+            overflow: hidden;
+            /* Hide overflow */
+            width: 150px;
+            /* Adjust size as needed */
+            height: 150px;
+            /* Adjust size as needed */
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Maintain aspect ratio */
+        }
+
+        .profile-details {
+            overflow: hidden;
+            /* To contain floats */
+        }
+
+        .profile-details p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Divider style */
+        .divider {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* Edit profile form styles */
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    {% include 'RPMS/Navbar.html' %}
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Display all profile fields with their current values -->
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" value="{{ form.instance.name }}"><br><br>
+            <label for="id_department">Department:</label>
+            <input type="text" id="id_department" name="department" value="{{ form.instance.department }}"><br><br>
+            <label for="id_position">Position:</label>
+            <input type="text" id="id_position" name="position" value="{{ form.instance.position }}"><br><br>
+            <label for="id_email">Email:</label>
+            <input type="email" id="id_email" name="email" value="{{ form.instance.email }}"><br><br>
+            <label for="id_education">Education:</label>
+            <input type="text" id="id_education" name="education" value="{{ form.instance.education }}"><br><br>
+            <label for="id_research_interests">Research Interests:</label>
+            <input type="text" id="id_research_interests" name="research_interests" value="{{ form.instance.research_interests }}"><br><br>
+            <label for="id_profile_photo">Profile Photo:</label>
+            <input type="file" id="id_profile_photo" name="profile_photo" value="{{ form.instance.profile_photo }}"><br><br>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

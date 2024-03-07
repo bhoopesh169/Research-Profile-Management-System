@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charts</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    {% include 'RPMS/Navbar.html' %}
+    <div id="chart-container">{{ plot_div|safe }}</div>
+    {% include 'RPMS/footer.html' %}
+</body>
+</html>

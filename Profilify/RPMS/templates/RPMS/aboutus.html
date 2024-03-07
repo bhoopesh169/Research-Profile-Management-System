@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MRIIC</title>
+    <style>
+        /* Styles for carousel */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    {% include 'RPMS/Navbar.html'%}
+<div class="container">
+    <h1>About <span style="color: #007bff;">MRIIC</span></h1>
+    <!-- Carousel container -->
+    <div class="slideshow-container">
+        <!-- Slides -->
+      <div class="mySlides">
+    <img src="https://www.zingyhomes.com/projectImages/user_22663/manav%20rachna.jpg" style="width: 1400px; height: 600px;">
+</div>
+
+        <div class="mySlides">
+            <img src="https://blog.rmgoe.org/wp-content/uploads/2022/06/Manav-Rachna-University-Faridabad.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <img src="https://manavrachna.edu.in/wp-content/uploads/2019/12/Untitled-design-8.png" style="width:100%">
+        </div>
+
+        <!-- Dot indicators -->
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <p>Welcome to <strong>MRIIC</strong>, where innovation meets excellence. We are a team of passionate individuals dedicated to revolutionizing [your industry/sector]. Our mission is to find solutions to problems that can have great impact o society and bring revolution.</p>
+
+    <h2>Who We Are</h2>
+    <p>At <strong>Our Organization</strong>, we believe in the power of collaboration, creativity, and cutting-edge technology. Our diverse team brings together expertise from various fields, including AI/ML, ECE, Web Development, Data Management and Visualization. We thrive on challenges and are committed to delivering solutions that exceed expectations.</p>
+
+    <h2>Our Values</h2>
+    <ul>
+        <li><strong>Innovation:</strong> We continuously push boundaries, embracing change and staying ahead of the curve.</li>
+        <li><strong>Integrity:</strong> We uphold the highest standards of ethics and transparency in everything we do.</li>
+        <li><strong>Excellence:</strong> We strive for excellence in every aspect of our work, setting benchmarks for quality and performance.</li>
+        <li><strong>Customer-Centricity:</strong> Our customers are at the heart of everything we do. We are dedicated to understanding their needs and surpassing their expectations.</li>
+    </ul>
+
+    <h2>What Sets Us Apart</h2>
+    <ul>
+        <li><strong>Expertise:</strong> With years of experience and a deep understanding of [your industry/sector], we bring unparalleled expertise to every project.</li>
+        <li><strong>Custom Solutions:</strong> We understand that every client is unique. That's why we offer tailored solutions designed to address specific challenges and objectives.</li>
+        <li><strong>Commitment to Success:</strong> Your success is our success. We are committed to partnering with you every step of the way, from initial consultation to project completion and beyond.</li>
+    </ul>
+
+    <h2>Our Impact</h2>
+    <p>Since our inception, we have had the privilege of working with [mention notable clients or projects, if applicable], making a positive impact in [mention relevant communities or industries]. We are proud of our accomplishments and remain dedicated to driving positive change in the world.</p>
+
+    <h2>Get in Touch</h2>
+    <p>Ready to take your [industry/sector] to the next level? We'd love to hear from you. <a href="/contact">Contact us</a> today to learn more about our services and how we can help you achieve your goals.</p>
+
+    <p>Thank you for considering <strong>Your Company Name</strong>. We look forward to the opportunity to collaborate with you.</p>
+</div>
+
+<!-- JavaScript for carousel -->
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+</script>
+<footer class="bottom">
+    {% include 'RPMS/footer.html'%}
+</footer>  
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+</body>
+</html>

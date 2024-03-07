@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Statistics</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Add space between cards */
+        }
+
+        .card {
+            flex: 1 0 calc(33.333% - 20px); /* Set each card to take up one third of the space with some margin */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px; /* Add some margin between buttons */
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Include Navbar -->
+    {% include 'RPMS/navbar.html' %}
+
+    <!-- Main Content -->
+    <h1>User Statistics</h1>
+    <ul>
+        {% for user_stat in user_stats %}
+        <li>
+            <div class="card mt-5">
+                <form action="{% url 'delete_profile' user_stat.id %}" method="post">
+                    {% csrf_token %}
+                    <strong>Username:</strong> {{ user_stat.username }}<br>
+                    <strong>Date Joined:</strong> {{ user_stat.date_joined }}<br>
+                    <strong>Last Login:</strong> {{ user_stat.last_login }}<br>
+                    <button type="submit">Delete Profile</button>
+
+                    </a>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <!-- Include Footer -->
+    {% include 'RPMS/footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/8eGwDN5Kl+ogJVZ6bIM5ilztc5fOGj4G/R8+K4KbtsbQ3wqUpyJKxCI2" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        .card-heading {
+            text-align: center;
+            color: rgb(72, 72, 164);
+        }
+        /* Carousel text fade-in animation */
+        .carousel-caption {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .carousel img {
+            object-fit: cover;
+            border: 4px solid #ddd;
+            /* Add a 2px solid border with a light gray color */
+            border-radius: 8px;
+            /* Optional: Add some border-radius for a rounded appearance */
+        }
+
+        .carousel img {
+            object-fit: cover;
+
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .carousel img {
+                height: 500px;
+                /* Set height for screens with a width of 600px or more */
+            }
+        }
+
+        @media only screen and (min-width: 991px) {
+            .carousel img {
+                height: 600px;
+                /* Set height for screens with a width of 960px or more */
+
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Card hover animations and shadows */
+        .card {
+            transition: transform .3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Spacing for <p> tag in cards */
+        .card-text {
+            margin-bottom: 1rem;
+        }
+
+        /* Set a fixed width and height for the images in cards */
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        /* CSS styles for the text section */
+        .text-section {
+    margin-top: 50px; /* Adjust spacing as needed */
+    padding: 20px;
+    background-color: #9cb3ca; /* Background color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.text-section h2 {
+    color: #333; /* Heading color */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    color: #666; /* Paragraph color */
+    font-size: 16px;
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* CSS animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-section {
+    animation: fadeInUp 1s ease-in-out; /* Apply animation to the text section */
+}
+
+    </style>
+
+    <!-- Your original navbar HTML content here -->
+    {% include 'RPMS/navbar.html'%}
+
+    <!-- Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide  "data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1000">
+                <img src="https://www.oneclearmessage.com/wp-content/uploads/2017/08/Knowledge-sharing.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption  d-md-block">
+                    <h5>PeakScholar A Perfect Solution</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://www.loginradius.com/wp-content/uploads/2019/08/profile-management-administer-customer-profiles-with-1.jpg" class="d-block w-100"
+                    alt="...">
+                <div class="carousel-caption d-md-block">
+                    <h5>Where Imagination Meets Collaboration</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="https://gazzconsulting.com/wp-content/uploads/2015/08/stockvault-the-social-network-people-networking176080.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption  d-md-block">
+                    <h5>Saving Time In Managing Profiles</h5>
+                </div>
+            </div>
+            <div class="carousel-item " data-bs-interval="4000">
+                <img src="https://cdn.pixabay.com/photo/2016/02/06/09/56/science-1182713_1280.jpg"
+                    class="d-block w-100 " alt="...">
+                <div class="carousel-caption  d-md-block">
+                    <h5>Vision and Solution</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container">
+        <h1 class="card-heading mt-3 mb-3">WHAT WE OFFER</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.BTLdLbMz8tGppLL_nhXxgwHaHW?rs=1&pid=ImgDetMain"
+                        class="card-img-top" alt="Profile Management Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile Management</h5>
+                        <p class="card-text">Create and manage detailed profiles. Customize achievements effectively.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <img src="https://staticblog.virtualvocations.com/2017/05/best-online-collaboration-tools-1536x1024.jpg"
+                        class="card-img-top" alt="Networking and Collaboration Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Networking and Collaboration</h5>
+                        <p class="card-text">Connect, collaborate, exchange ideas with researchers and professionals
+                            globally.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.C7fVShAosEVNDY8hE39aSQHaE8?rs=1&pid=ImgDetMain"
+                        class="card-img-top" alt="Research Discovery Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Research Discovery</h5>
+                        <p class="card-text">Discover new articles, conferences, and funding opportunities. Stay
+                            informed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-5">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.FsiN9x7UpByRq7voZnb7egHaEo?rs=1&pid=ImgDetMain"
+                        class="card-img-top" alt="Knowledge Sharing Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Knowledge Sharing</h5>
+                        <p class="card-text">Share research findings, insights, and updates. Foster collaboration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-5">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.KKj1GYiQepHOJt7Se70vSAHaEK?rs=1&pid=ImgDetMain"
+                        class="card-img-top" alt="Career Development Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Career Development</h5>
+                        <p class="card-text">Access job postings, internships, workshops. Enhance skills, advance
+                            careers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-5">
+                <div class="card">
+                    <img src="https://i.pinimg.com/originals/35/e0/98/35e098f3d80277266229192a68bcaf2e.jpg"
+                        class="card-img-top" alt="Profile Analytics Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile Analytics</h5>
+                        <p class="card-text">Track research profile impact, visibility. Monitor metrics, identify
+                            improvements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-section">
+        <h2>Welcome to Our Website</h2>
+        <p>Here, we offer a comprehensive solution tailored to the needs of scholars, researchers, and academic professionals. Our platform serves as your digital hub for organizing and showcasing your academic endeavors.
+
+            With our intuitive tools, you can effortlessly manage your profile, keeping track of publications, collaborations, and achievements. Connect with peers and collaborators worldwide, expanding your network and fostering new opportunities for collaboration.
+            
+            Explore a wealth of resources for research discovery, stay updated on the latest conferences and funding opportunities, and share your insights with the global research community.
+            
+            Take advantage of career development resources, access job postings, internships, and skill-building workshops to propel your career forward.
+            
+            Join our thriving community today and embark on a journey of academic excellence and collaboration!"</p>
+    </div>
+    </div>
+    <footer class="bottom">
+        {% include 'RPMS/footer.html'%}
+    </footer>
+    <!-- Bootstrap Bundle JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>
